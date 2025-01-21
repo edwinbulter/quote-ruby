@@ -1,0 +1,28 @@
+### fetch quotes from zen
+GET https://zenquotes.io/api/quotes
+
+### fetch random quote from zen
+GET https://zenquotes.io/api/random
+
+### fetch a specific quote with GET
+GET http://localhost:3000/api/v1/quote/2
+
+### fetch all quotes with GET
+GET http://localhost:3000/api/v1/quotes
+
+### fetch all liked quotes with GET
+GET http://localhost:3000/api/v1/quote/liked
+
+### fetch random quote with GET
+GET http://localhost:3000/api/v1/quote
+
+### fetch random quote with POST and idsToExclude
+POST http://localhost:3000/api/v1/quote
+Content-Type: application/json
+
+[1,2]
+
+### like a quote with PATCH and id
+PATCH http://localhost:3000/api/v1/quote/1/like
+
+

@@ -66,10 +66,14 @@ class Api::V1::QuotesController < ApplicationController
 
           # Iterate through the fetched quotes and add them to the database
           quotes.each do |quote|
-            # Ensure the necessary keys exist in the response
+
+            # Only add a quote to the database if the quote/author combination doesn't occur yet
             if quote['q'] && quote['a']
-              Quote.create(quoteText: quote['q'], author: quote['a'], likes: 0)
+              unless Quote.exists?(quoteText: quote['q'], author: quote['a'])
+                Quote.create(quoteText: quote['q'], author: quote['a'], likes: 0)
+              end
             end
+
           end
         rescue => e
           Rails.logger.error("Failed to fetch quotes from ZenQuotes: #{e.message}")

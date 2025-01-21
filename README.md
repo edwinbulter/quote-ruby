@@ -1,6 +1,21 @@
-# Ruby on Rails version of the Quote app
+# Ruby on Rails backend for the Quote app
+This application can serve as the API backend for the React frontend which is available at:
+https://github.com/edwinbulter/quote-web
 
-Project setup:
+When launched, the API can be tested in IntelliJ using the file quote_api_test.http which can be found in the test folder.
+
+## Implemented features:
+- A set of quotes will be requested at ZenQuotes and written in the default python sqlite database if the database is empty
+- Only unique quotes are written to the database:
+  - if the quoteText/author combination doesn't appear in the database, it is added
+- When requesting a random quote, 'quote ids to exclude' can be sent in the body of the POST request to avoid sending the same quote again when requesting a random quote
+- If the list with 'quote ids to exclude' exceeds the number of quotes in the database:
+  - a set of quotes is requested at ZenQuotes, added to the database and a random new quote is returned
+- Liking of quotes
+  - Liked quotes will get their likes field incremented
+- A list with liked quotes sorted by the number of likes can be requested.
+
+## Project setup:
 - rails new quote-ruby
 - open project in Intellij Idea
 - create Quote model in terminal
