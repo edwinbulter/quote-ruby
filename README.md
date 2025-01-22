@@ -51,7 +51,7 @@ class Api::V1::QuotesController < ApplicationController
 end
 ```
 - to fix CORS issue when calling the API from the browser:
-  - Add to gemfile: gem 'rack-cors
+  - Add to gemfile: gem 'rack-cors'
   - run in terminal
     ```shell
     bundle install
@@ -78,7 +78,7 @@ Update the test db:
 
 Run one test:
 ```shell
-  rails test test/models/quote_test.r
+  rails test test/controllers/api/v1/quotes_controller_test.rb
 ```
 
 Run all tests:
