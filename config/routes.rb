@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     namespace :v1 do
 
       # Retrieve all quotes
-      get 'quote/all', to: 'quotes#index'
+      get 'quotes', to: 'quotes#index'
 
       # Retrieve all liked quotes
       get 'quote/liked', to: 'quotes#liked'

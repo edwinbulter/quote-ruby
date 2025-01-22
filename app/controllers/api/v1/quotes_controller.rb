@@ -28,7 +28,6 @@ class Api::V1::QuotesController < ApplicationController
     begin
       quote = Quote.find(params[:id])
       quote.update!(likes: quote.likes + 1)
-      QuoteLikedNotification.broadcast("#{quote.quoteText} - #{quote.author}")
       render plain: quote.likes, status: :ok
     rescue ActiveRecord::RecordNotFound
       render json: { error: 'Quote not found' }, status: :not_found
