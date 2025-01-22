@@ -85,3 +85,18 @@ Run all tests:
 ```shell
   rails test
 ```
+
+## Testing with the frontend
+- Start this project from the commandline with
+```shell
+   rails server -p 3100
+```
+- Get the frontend code from https://github.com/edwinbulter/quote-web 
+- Change the portnumber into 3100 in the .env.development file of the frontend:
+```
+   REACT_APP_API_BASE_URL=http://localhost:3100
+```
+- Start the frontend from the commandline with 
+```shell
+   npm start
+```
