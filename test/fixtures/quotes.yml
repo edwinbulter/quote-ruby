@@ -1,11 +1,2 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  quoteText: MyString
-  author: MyString
-  likes: 1
-
-two:
-  quoteText: MyString
-  author: MyString
-  likes: 1

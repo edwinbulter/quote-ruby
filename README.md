@@ -69,3 +69,19 @@ end
       end
     end
 ```
+
+## Running tests
+Update the test db:
+  ```shell
+    rails db:migrate RAILS_ENV=test
+  ```
+
+Run one test:
+```shell
+  rails test test/models/quote_test.r
+```
+
+Run all tests:
+```shell
+  rails test
+```
